@@ -26,11 +26,10 @@ As dificuldades vivenciadas no contexto real de administração de obras que mot
 Desenvolver e implantar a plataforma SaaS B2B ENGER para centralizar e automatizar a gestão de obras, englobando o controle financeiro, a gestão de força de trabalho e a geração de orçamentos profissionais.
 
 ### Objetivos Específicos
-* Desenvolver um construtor de orçamentos interativo, substituindo telas de visualização estática por uma interface de manipulação de dados de construção em tempo real.
-* Implementar o rastreamento e controle de presença de funcionários alocados por obra.
-* Automatizar a geração profissional de orçamentos em PDF e seu envio assíncrono para clientes através de workers de background por e-mail.
+* Implementar as funcionalidades de assinatura do usuário/empresa, geração de orçamentos, etapas, gestão das obras, validação de admins, o que pode ser utilizado com base no seu nivel de administração.
+* Automatizar a geração profissional de orçamentos, controle de obras, etapas, controle financeiro do que foi pago x recebido.
 * Integrar um sistema de checkout transparente e de gestão de assinaturas recorrentes utilizando a API do Mercado Pago.
-* Garantir uma interface de usuário clara e intuitiva, aplicando formatações amigáveis (como a remoção de zeros desnecessários em alíquotas e decimais) para facilitar a leitura financeira.
+* Garantir uma interface de usuário clara e intuitiva, aplicando formatações amigáveis para facilitar a leitura financeira.
 
 ## Stack Tecnológico
 
@@ -38,7 +37,7 @@ A escolha do stack tecnológico foi baseada na necessidade de escalabilidade, se
 
 * **Backend - C# (.NET Core):** Linguagem robusta e fortemente tipada, ideal para implementar regras de negócio seguras no sistema financeiro e de gestão. Facilita a adoção de padrões arquiteturais avançados, como Domain-Driven Design (DDD) e Clean Architecture, garantindo o isolamento da lógica de domínio.
 * **Frontend - React com Tailwind CSS:** O React viabiliza a criação do construtor de orçamentos interativo de forma componentizada e reativa. O Tailwind CSS foi escolhido para agilizar a estilização da identidade visual corporativa do projeto, baseada em um alto contraste com as cores laranja, preto e branco, suportando nativamente a alternância entre os temas claro (laranja e branco) e escuro (laranja e preto).
-* **Banco de Dados - PostgreSQL e SQL Server:** Sistemas gerenciadores de banco de dados relacionais escolhidos por sua confiabilidade e integridade para gerenciar as tabelas de controle financeiro, usuários e obras.
+* **Banco de Dados - PostgreSQL** Sistemas gerenciadores de banco de dados relacionais escolhidos por sua confiabilidade e integridade para gerenciar as tabelas e por ser open source e o mais utilizado.
 * **Infraestrutura e DevOps - Docker, Docker Compose e GitHub Actions:** O Docker garante a padronização dos ambientes de desenvolvimento, orquestrando a API e os bancos de dados simultaneamente. O GitHub Actions foi adotado para compor a esteira de CI/CD, automatizando a execução de testes unitários sempre que novos códigos são enviados para a branch `develop`.
 
 ## Descrição da Solução
@@ -49,9 +48,10 @@ Na interface do usuário, destaca-se o construtor de orçamentos, uma tela altam
 
 No backend, a solução integra-se à API do Mercado Pago para realizar a tokenização de cartões e gerenciar rotas de pré-aprovação de pagamentos e assinaturas recorrentes. Além disso, o sistema conta com rotinas de background dedicadas: workers que utilizam bibliotecas de geração de PDF para compilar os relatórios de orçamento construídos na plataforma e dispará-los automaticamente por e-mail para os clientes.
 
-## Arquitetura
+## Stack Tecnológico
 
 O ENGER adota o padrão **Domain-Driven Design (DDD)** aliado aos conceitos de **Clean Architecture**, isolando as regras de negócio de construção e orçamento das camadas de infraestrutura, banco de dados e entrega da API. A autenticação e segurança de acessos são gerenciadas via tokens JWT.
+Utilizando o React como ferramenta de frontend trazendo padrões para melhorar a experiência do usuário.
 
 Artefatos gerados para o projeto:
 1. **Diagrama Entidade-Relacionamento (ER):** Modelagem estrutural das tabelas de obras, controle de presença de funcionários, orçamentos e faturamento.
@@ -60,9 +60,27 @@ Artefatos gerados para o projeto:
 4. **Casos de Uso e Fluxogramas:** Mapeamento das rotinas de integração de checkout transparente com o Mercado Pago e o fluxo de envio de e-mails em background.
 5. **Configuração de Infraestrutura:** Scripts `Dockerfile` e arquivos `docker-compose.yml` responsáveis pela orquestração local dos serviços.
 
-*(Nota: Adicione aqui o link para o seu repositório no GitHub).*
+## Descrição da Solução
 
-## Validação
+O ENGER foi concebido como uma plataforma SaaS B2B robusta, desenhada para centralizar a gestão de obras e eliminar a fragmentação de processos administrativos e operacionais no setor da construção civil. A solução organiza-se através de uma arquitetura moderna que separa as responsabilidades de negócio da infraestrutura, garantindo que o sistema seja escalável e de fácil manutenção. No centro da experiência do usuário está o construtor interativo de orçamentos, que permite aos gestores manipular dados de insumos e serviços em tempo real, oferecendo uma interface dinâmica que supera as limitações de visualizações estáticas comuns em sistemas tradicionais.
+
+Para garantir a fluidez dos processos financeiros, o sistema integra-se de forma transparente com a API do Mercado Pago, permitindo o processamento de pagamentos e a gestão de assinaturas recorrentes diretamente pela plataforma. Complementando essa automação, o ENGER utiliza rotinas de background (workers) para a compilação e geração profissional de documentos em PDF, realizando o disparo automático de orçamentos e relatórios por e-mail para os clientes finais. Essa estrutura assíncrona garante que tarefas pesadas de processamento não interfiram na performance da interface do usuário, mantendo a agilidade do sistema mesmo em períodos de alta demanda.
+
+A segurança é um pilar fundamental da organização do sistema, sendo implementada através de autenticação baseada em tokens JWT para proteger as rotas da API e garantir que apenas usuários autorizados acessem os dados sensíveis de cada obra. O frontend entrega uma identidade visual de alto impacto focada no público corporativo, utilizando uma paleta de cores em laranja, preto e branco que se adapta automaticamente aos modos claro e escuro. A preocupação com a usabilidade estende-se à clareza dos dados apresentados, onde informações financeiras e alíquotas são formatadas de maneira limpa (sem casas decimais redundantes) para evitar poluição visual e facilitar a leitura técnica.
+
+A figura abaixo ilustra uma visão geral de solução:
+
+![Visão Geral da Solução](https://github.com/user-attachments/assets/96519e76-842e-4931-97b3-fccc710febb8)
+
+Exemplo de código da chamada de serviço assíncrono para geração de orçamentos:
+
+```csharp
+// Exemplo de implementação de serviço seguindo DDD no ENGER
+public class OrcamentoService : IOrcamentoService {
+    public async Task GerarPdfEEnviarEmail(Guid orcamentoId) {
+        // Lógica para compilar o PDF e disparar o worker de background
+    }
+}
 
 ### Estratégia
 A validação das regras de negócio estruturais tem sido realizada através de homologação contínua, baseando-se em dumps de banco de dados e especificações providenciadas pela supervisão técnica do projeto. Além disso, os fluxos de CI/CD garantem que as lógicas core do sistema sejam validadas por meio de testes unitários a cada nova integração. O construtor interativo de orçamentos e as diretrizes de design visual (paleta de cores e formatação de dados) foram iterados e validados através de feedbacks diretos sobre a interface.
