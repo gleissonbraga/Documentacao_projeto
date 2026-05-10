@@ -12,8 +12,6 @@ Isso gera gargalos significativos em duas frentes principais:
 
 ## Definição do Problema
 
-## Definição do Problema
-
 O setor da construção civil é caracterizado por uma alta complexidade logística e financeira, exigindo um rigoroso acompanhamento de custos, prazos e recursos humanos. Contudo, a digitalização dos processos de gestão de obras ainda é um desafio. Segundo Mattos (2010, p. 45), o planejamento e o controle orçamentário são frequentemente negligenciados ou executados de maneira rudimentar, resultando em estouros de orçamento e atrasos significativos na entrega dos projetos.
 
 A gestão operacional de um canteiro de obras envolve múltiplas frentes que, quando tratadas de forma isolada, geram gargalos administrativos. Durante a etapa de *discovery* do projeto ENGER — que incluiu a análise de requisitos técnicos e fluxos de trabalho baseados em instâncias de banco de dados e operações de um ambiente real de supervisão técnica —, constatou-se que a fragmentação da informação é a principal dor enfrentada pelos gestores. 
