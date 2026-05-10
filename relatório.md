@@ -2,17 +2,45 @@
 
 ## Resumo do Projeto
 
-A gestão de obras na construção civil frequentemente enfrenta desafios ligados à fragmentação de processos operacionais e administrativos. Essa desintegração dificulta o acompanhamento da presença da força de trabalho e gera ineficiências na elaboração, envio e cobrança de orçamentos. Para solucionar essas lacunas, este trabalho apresenta o ENGER, uma plataforma SaaS B2B que centraliza a gestão da construção através de ferramentas integradas, destacando-se um construtor interativo de orçamentos e a automatização de comunicações e pagamentos. Como consequência, a solução otimiza o fluxo de trabalho das empresas do setor, garantindo maior previsibilidade financeira e um controle abrangente sobre o ciclo de vida e os custos operacionais de cada obra.
+A ideia é desenvolver um projeto SaaS de Gestão de Obras voltado para pequenas, médias e grandes empresa aonde o MVP irá entregar toda a parte de geração e orçamentos, gestão da obra, com funcionários envolvidos, preços, valores quitados, etapas da obra e como se encontra, validar se esta em atraso, etapas concluidas sem atraso e também os valores pagos das etapas concluidas.
+
+Isso gera gargalos significativos em duas frentes principais:
+1. **Controle de Mão de Obra e Custos:** Controle de obras, valores Recebidos x Gastos, atraso de obra, o porquê ela atrasou, guardas os processos como garantia de executado com fotos e documentações e deixando a parte escrita e cansativ, como envio de orçamento em caderno.
+2. **Por que é um problema:** É um problema para empresas de pequeno, médio e grande porte não terem dados de suas obras, aonde ele consegue vaslidar estruturar e buscar ter uma acertividade em orçamento, etapas para uma conclusão e gestão da obra.
+3. **A solução:** Para solucionar essas lacunas, este trabalho apresenta o ENGER, uma plataforma SaaS B2B que centraliza a gestão da construção através de um construtor interativo de orçamentos e da automatização de rotinas financeiras e comunicações.
+4. **A consequência:** Como consequência, o sistema otimiza o fluxo de trabalho das empresas do setor, garantindo maior previsibilidade financeira e um controle centralizado sobre os custos de cada obra e previsão de tempo, o que foi feito/construido para abordar em próximas obras.
 
 ## Definição do Problema
 
-O setor de construção civil demanda um controle rigoroso de insumos, mão de obra e fluxo de caixa. Atualmente, muitas empresas gerenciam essas etapas de forma isolada, utilizando planilhas genéricas ou sistemas que apenas exibem dados de forma estática, sem permitir uma interação ágil com a construção do orçamento. 
+## Definição do Problema
 
-Isso gera gargalos significativos em duas frentes principais:
-1. **Controle de Mão de Obra e Custos:** A ausência de um sistema unificado para gerenciar a presença dos funcionários nas obras resulta em falhas no cálculo de custos reais e dificuldades no fechamento da folha e do orçamento final.
-2. **Comunicação e Cobrança:** O processo de elaboração, envio de orçamentos para o cliente e a gestão de recebimentos ou assinaturas recorrentes costuma ser fragmentado e manual. Isso aumenta a inadimplência, eleva o tempo de resposta ao cliente e prejudica a experiência do usuário final.
+O setor da construção civil é caracterizado por uma alta complexidade logística e financeira, exigindo um rigoroso acompanhamento de custos, prazos e recursos humanos. Contudo, a digitalização dos processos de gestão de obras ainda é um desafio. Segundo Mattos (2010, p. 45), o planejamento e o controle orçamentário são frequentemente negligenciados ou executados de maneira rudimentar, resultando em estouros de orçamento e atrasos significativos na entrega dos projetos.
 
-O ENGER surge para resolver esses problemas, oferecendo um ambiente unificado de gestão B2B voltado para a praticidade e a automação de rotinas da construção civil.
+A gestão operacional de um canteiro de obras envolve múltiplas frentes que, quando tratadas de forma isolada, geram gargalos administrativos. Durante a etapa de *discovery* do projeto ENGER — que incluiu a análise de requisitos técnicos e fluxos de trabalho baseados em instâncias de banco de dados e operações de um ambiente real de supervisão técnica —, constatou-se que a fragmentação da informação é a principal dor enfrentada pelos gestores. 
+
+As dificuldades vivenciadas no contexto real de administração de obras que motivaram o desenvolvimento deste projeto incluem:
+
+1. **Falta de Praticidade e Usabilidade na Orçamentação:** A elaboração de orçamentos é o coração financeiro da obra. Identificou-se que muitos sistemas fornecem apenas telas estáticas de visualização de dados. O usuário necessita de um construtor de orçamentos interativo, onde seja possível manipular variáveis, aplicar formatações de interface claras (como a exibição limpa de decimais em alíquotas, evitando zeros à direita) e construir o preço final em tempo real, eliminando o uso paralelo de planilhas de rascunho.
+2. **Processos Manuais Não Informatizados:** A etapa de formalização comercial apresenta forte lentidão. A compilação de propostas orçamentárias e o envio para os clientes finais são, na maioria das vezes, processos executados manualmente. Além disso, a gestão de assinaturas e o processo de cobrança carecem de automação sistêmica, aumentando a inadimplência e o trabalho administrativo recorrente.
+3. **Controle de Força de Trabalho:** O rastreamento de presença de funcionários alocados especificamente por obra costuma ser feito em controles paralelos, desconexos do sistema financeiro principal, dificultando o cálculo ágil do custo real da mão de obra.
+
+### Análise de Projetos Correlatos
+
+Para embasar a proposta de valor do ENGER, foi realizada uma pesquisa sobre as ferramentas atualmente utilizadas no nicho de gestão de obras. O mercado divide-se majoritariamente entre soluções genéricas de baixo custo (planilhas) e sistemas ERP engessados.
+
+A Tabela 1 apresenta um comparativo entre as soluções convencionais e o projeto proposto.
+
+**Tabela 1: Comparativo de Funcionalidades entre Projetos Correlatos e o ENGER**
+
+| Funcionalidade / Requisito | Planilhas Eletrônicas (Ex: Excel) | ERPs Tradicionais de Engenharia | Plataforma ENGER |
+| :--- | :---: | :---: | :---: |
+| **Construtor Interativo de Orçamentos** | Parcial (Requer fórmulas manuais) | Não (Geralmente telas estáticas) | **Sim (Manipulação em tempo real)** |
+| **Controle de Presença por Obra** | Não | Sim | **Sim** |
+| **Automação de Envio de Orçamentos (PDF)** | Não | Parcial (Requer disparo manual) | **Sim (via Background Workers)** |
+| **Checkout Transparente e Assinaturas** | Não | Raro (Dependem de boletos avulsos) | **Sim (Integração de Pagamento)** |
+| **Acessibilidade e Modelo de Distribuição** | Arquivo Local / Nuvem Básica | Instalação Local (Desktop) ou Nuvem | **SaaS B2B 100% Web** |
+
+Diante deste cenário comparativo, o desenvolvimento do ENGER justifica-se pela necessidade de preencher a lacuna entre a usabilidade moderna e a automação de processos operacionais e financeiros. O sistema propõe-se a eliminar a fragmentação ao unir o controle da execução da obra com a fluidez na negociação comercial, entregando uma ferramenta SaaS adaptada às necessidades dinâmicas e às dificuldades reais enfrentadas por clientes na construção civil.
 
 ## Objetivos
 
