@@ -22,26 +22,6 @@ As dificuldades vivenciadas no contexto real de administração de obras que mot
 2. **Processos Manuais Não Informatizados:** A etapa de formalização comercial apresenta forte lentidão. A compilação de propostas orçamentárias e o envio para os clientes finais são, na maioria das vezes, processos executados manualmente. Além disso, a gestão de assinaturas e o processo de cobrança carecem de automação sistêmica, aumentando a inadimplência e o trabalho administrativo recorrente.
 3. **Controle de Força de Trabalho:** O rastreamento de presença de funcionários alocados especificamente por obra costuma ser feito em controles paralelos, desconexos do sistema financeiro principal, dificultando o cálculo ágil do custo real da mão de obra.
 
-### Análise de Projetos Correlatos
-
-Para embasar a proposta de valor do ENGER, foi realizada uma pesquisa sobre as ferramentas atualmente utilizadas no nicho de gestão de obras. O mercado divide-se majoritariamente entre soluções genéricas de baixo custo (planilhas) e sistemas ERP engessados.
-
-A Tabela 1 apresenta um comparativo entre as soluções convencionais e o projeto proposto.
-
-**Tabela 1: Comparativo de Funcionalidades entre Projetos Correlatos e o ENGER**
-
-| Funcionalidade / Requisito | Planilhas Eletrônicas (Ex: Excel) | ERPs Tradicionais de Engenharia | Plataforma ENGER |
-| :--- | :---: | :---: | :---: |
-| **Construtor Interativo de Orçamentos** | Parcial (Requer fórmulas manuais) | Não (Geralmente telas estáticas) | **Sim (Manipulação em tempo real)** |
-| **Controle de Presença por Obra** | Não | Sim | **Sim** |
-| **Automação de Envio de Orçamentos (PDF)** | Não | Parcial (Requer disparo manual) | **Sim (via Background Workers)** |
-| **Checkout Transparente e Assinaturas** | Não | Raro (Dependem de boletos avulsos) | **Sim (Integração de Pagamento)** |
-| **Acessibilidade e Modelo de Distribuição** | Arquivo Local / Nuvem Básica | Instalação Local (Desktop) ou Nuvem | **SaaS B2B 100% Web** |
-
-Diante deste cenário comparativo, o desenvolvimento do ENGER justifica-se pela necessidade de preencher a lacuna entre a usabilidade moderna e a automação de processos operacionais e financeiros. O sistema propõe-se a eliminar a fragmentação ao unir o controle da execução da obra com a fluidez na negociação comercial, entregando uma ferramenta SaaS adaptada às necessidades dinâmicas e às dificuldades reais enfrentadas por clientes na construção civil.
-
-## Objetivos
-
 ### Objetivo Geral
 Desenvolver e implantar a plataforma SaaS B2B ENGER para centralizar e automatizar a gestão de obras, englobando o controle financeiro, a gestão de força de trabalho e a geração de orçamentos profissionais.
 
