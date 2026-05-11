@@ -40,14 +40,6 @@ A escolha do stack tecnológico foi baseada na necessidade de escalabilidade, se
 * **Banco de Dados - PostgreSQL** Sistemas gerenciadores de banco de dados relacionais escolhidos por sua confiabilidade e integridade para gerenciar as tabelas e por ser open source e o mais utilizado.
 * **Infraestrutura e DevOps - Docker, Docker Compose e GitHub Actions:** O Docker garante a padronização dos ambientes de desenvolvimento, orquestrando a API e os bancos de dados simultaneamente. O GitHub Actions foi adotado para compor a esteira de CI/CD, automatizando a execução de testes unitários sempre que novos códigos são enviados para a branch `develop`.
 
-## Descrição da Solução
-
-O ENGER é uma plataforma SaaS B2B desenhada para atender empresas do setor da construção civil com foco em produtividade. O sistema opera em uma arquitetura baseada em serviços e processos assíncronos. 
-
-Na interface do usuário, destaca-se o construtor de orçamentos, uma tela altamente interativa onde os gestores podem precificar materiais e serviços dinamicamente. O frontend apresenta uma identidade visual corporativa (laranja, preto e branco) limpa, onde valores e alíquotas são formatados com precisão, sem decimais redundantes, facilitando a tomada de decisão.
-
-No backend, a solução integra-se à API do Mercado Pago para realizar a tokenização de cartões e gerenciar rotas de pré-aprovação de pagamentos e assinaturas recorrentes. Além disso, o sistema conta com rotinas de background dedicadas: workers que utilizam bibliotecas de geração de PDF para compilar os relatórios de orçamento construídos na plataforma e dispará-los automaticamente por e-mail para os clientes.
-
 ## Stack Tecnológico
 
 O ENGER adota o padrão **Domain-Driven Design (DDD)** aliado aos conceitos de **Clean Architecture**, isolando as regras de negócio de construção e orçamento das camadas de infraestrutura, banco de dados e entrega da API. A autenticação e segurança de acessos são gerenciadas via tokens JWT.
@@ -66,21 +58,34 @@ O ENGER foi concebido como uma plataforma SaaS B2B robusta, desenhada para centr
 
 Para garantir a fluidez dos processos financeiros, o sistema integra-se de forma transparente com a API do Mercado Pago, permitindo o processamento de pagamentos e a gestão de assinaturas recorrentes diretamente pela plataforma. Complementando essa automação, o ENGER utiliza rotinas de background (workers) para a compilação e geração profissional de documentos em PDF, realizando o disparo automático de orçamentos e relatórios por e-mail para os clientes finais. Essa estrutura assíncrona garante que tarefas pesadas de processamento não interfiram na performance da interface do usuário, mantendo a agilidade do sistema mesmo em períodos de alta demanda.
 
-A segurança é um pilar fundamental da organização do sistema, sendo implementada através de autenticação baseada em tokens JWT para proteger as rotas da API e garantir que apenas usuários autorizados acessem os dados sensíveis de cada obra. O frontend entrega uma identidade visual de alto impacto focada no público corporativo, utilizando uma paleta de cores em laranja, preto e branco que se adapta automaticamente aos modos claro e escuro. A preocupação com a usabilidade estende-se à clareza dos dados apresentados, onde informações financeiras e alíquotas são formatadas de maneira limpa (sem casas decimais redundantes) para evitar poluição visual e facilitar a leitura técnica.
+A segurança é um pilar fundamental da organização do sistema, sendo em tokens implementada através de autenticação baseada JWT para proteger as rotas da API e garantir que apenas usuários autorizados acessem os dados sensíveis de cada obra. O frontend entrega uma identidade visual de alto impacto focada no público corporativo, utilizando uma paleta de cores em laranja, preto e branco que se adapta automaticamente aos modos claro e escuro. A preocupação com a usabilidade estende-se à clareza dos dados apresentados, onde informações financeiras e alíquotas são formatadas de maneira limpa (sem casas decimais redundantes) para evitar poluição visual e facilitar a leitura técnica.
 
-A figura abaixo ilustra uma visão geral de solução:
+## Arquitetura
 
-![Visão Geral da Solução](https://github.com/user-attachments/assets/96519e76-842e-4931-97b3-fccc710febb8)
+Este tópico apresenta a organização estrutural do sistema ENGER, detalhando suas camadas e os artefatos gerados durante o processo de desenvolvimento.
 
-Exemplo de código da chamada de serviço assíncrono para geração de orçamentos:
+A plataforma ENGER adota o padrão arquitetural **Clean Architecture** em conjunto com **Domain-Driven Design (DDD)** no backend. Essa estrutura visa separar as responsabilidades do negócio das camadas de infraestrutura e entrega, garantindo a manutenibilidade e escalabilidade do software. O frontend utiliza **React** e **Tailwind CSS** para construir as interfaces dinâmicas, incluindo o construtor interativo de orçamentos. A persistência de dados é gerenciada por bancos de dados relacionais **PostgreSQL** e **SQL Server**, enquanto tarefas assíncronas, como geração de PDFs e envio de e-mails, são executadas por workers de background.
 
-```csharp
-// Exemplo de implementação de serviço seguindo DDD no ENGER
-public class OrcamentoService : IOrcamentoService {
-    public async Task GerarPdfEEnviarEmail(Guid orcamentoId) {
-        // Lógica para compilar o PDF e disparar o worker de background
-    }
-}
+A figura abaixo ilustra uma visão geral de arquitetura (camadas do sistema):
+
+![Visão Geral da Arquitetura do Sistema ENGER](https://github.com/user-attachments/assets/9a0fc9b4-0aeb-4246-a863-06eefcf19758)
+
+*Visão Geral da Infraestrutura e Camadas da Plataforma ENGER.*
+
+Ao longo do desenvolvimento do projeto ENGER, foram gerados artefatos técnicos e de planejamento para suportar a solução. Atuando como um guia para a equipe de desenvolvimento e stakeholders, os artefatos específicos criados para este projeto incluem:
+
+1.  **Benchmarking (Tabela Comparativa):** Análise competitiva entre o ENGER e soluções de mercado para identificar diferenciais.
+2.  **MVP Canvas:** Definição do produto mínimo viável focado na orçamentação interativa e controle de presença.
+3.  **Histórias do Usuário:** Descrição detalhada das funcionalidades sob a perspectiva dos gestores de obras e funcionários.
+4.  **Diagrama Entidade-Relacionamento (ER):** Modelagem do banco de dados relacional (PostgreSQL e SQL Server) para o controle de orçamentos, obras e funcionários.
+5.  **Protótipos de Interface:** High-fidelity wireframes e mockups do frontend em React, destacando a paleta de cores laranja, preto e branco e o construtor interativo.
+
+*(Adicione aqui o link para o repositório que contém a listagem e os arquivos dos artefatos listados acima).*
+
+**Exemplos de repositórios:**
+
+* [https://github.com/luciano-zanuz/enger-projeto](https://github.com/luciano-zanuz/enger-projeto)
+* [https://github.com/exemplo/tcc-enger](https://github.com/exemplo/tcc-enger)
 
 ### Estratégia
 A validação das regras de negócio estruturais tem sido realizada através de homologação contínua, baseando-se em dumps de banco de dados e especificações providenciadas pela supervisão técnica do projeto. Além disso, os fluxos de CI/CD garantem que as lógicas core do sistema sejam validadas por meio de testes unitários a cada nova integração. O construtor interativo de orçamentos e as diretrizes de design visual (paleta de cores e formatação de dados) foram iterados e validados através de feedbacks diretos sobre a interface.
