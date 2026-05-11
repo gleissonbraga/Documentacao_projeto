@@ -66,7 +66,7 @@ Ao longo do desenvolvimento do projeto ENGER, foram gerados artefatos técnicos 
 
 **Exemplos de repositórios:**
 
-* [https://github.com/luciano-zanuz/enger-projeto](https://github.com/luciano-zanuz/enger-projeto)
+* (https://github.com/gleissonbraga/projeto_ENGER_backend)
 
 ### Estratégia
 A validação das regras de negócio estruturais tem sido realizada através de homologação contínua, baseando-se em dumps de banco de dados e especificações providenciadas pela supervisão técnica do projeto. Além disso, os fluxos de CI/CD garantem que as lógicas core do sistema sejam validadas por meio de testes unitários a cada nova integração. O construtor interativo de orçamentos e as diretrizes de design visual (paleta de cores e formatação de dados) foram iterados e validados através de feedbacks diretos sobre a interface.
