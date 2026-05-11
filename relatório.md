@@ -40,18 +40,6 @@ A escolha do stack tecnológico foi baseada na necessidade de escalabilidade, se
 * **Banco de Dados - PostgreSQL** Sistemas gerenciadores de banco de dados relacionais escolhidos por sua confiabilidade e integridade para gerenciar as tabelas e por ser open source e o mais utilizado.
 * **Infraestrutura e DevOps - Docker, Docker Compose e GitHub Actions:** O Docker garante a padronização dos ambientes de desenvolvimento, orquestrando a API e os bancos de dados simultaneamente. O GitHub Actions foi adotado para compor a esteira de CI/CD, automatizando a execução de testes unitários sempre que novos códigos são enviados para a branch `develop`.
 
-## Stack Tecnológico
-
-O ENGER adota o padrão **Domain-Driven Design (DDD)** aliado aos conceitos de **Clean Architecture**, isolando as regras de negócio de construção e orçamento das camadas de infraestrutura, banco de dados e entrega da API. A autenticação e segurança de acessos são gerenciadas via tokens JWT.
-Utilizando o React como ferramenta de frontend trazendo padrões para melhorar a experiência do usuário.
-
-Artefatos gerados para o projeto:
-1. **Diagrama Entidade-Relacionamento (ER):** Modelagem estrutural das tabelas de obras, controle de presença de funcionários, orçamentos e faturamento.
-2. **Wireframes e Protótipos:** Design das interfaces nos modos claro e escuro, detalhando a usabilidade do construtor interativo de orçamentos.
-3. **Documentação de CI/CD:** Arquivos de workflow do GitHub Actions detalhando as etapas de automação e testes na branch `develop`.
-4. **Casos de Uso e Fluxogramas:** Mapeamento das rotinas de integração de checkout transparente com o Mercado Pago e o fluxo de envio de e-mails em background.
-5. **Configuração de Infraestrutura:** Scripts `Dockerfile` e arquivos `docker-compose.yml` responsáveis pela orquestração local dos serviços.
-
 ## Descrição da Solução
 
 O ENGER foi concebido como uma plataforma SaaS B2B robusta, desenhada para centralizar a gestão de obras e eliminar a fragmentação de processos administrativos e operacionais no setor da construção civil. A solução organiza-se através de uma arquitetura moderna que separa as responsabilidades de negócio da infraestrutura, garantindo que o sistema seja escalável e de fácil manutenção. No centro da experiência do usuário está o construtor interativo de orçamentos, que permite aos gestores manipular dados de insumos e serviços em tempo real, oferecendo uma interface dinâmica que supera as limitações de visualizações estáticas comuns em sistemas tradicionais.
@@ -66,12 +54,6 @@ Este tópico apresenta a organização estrutural do sistema ENGER, detalhando s
 
 A plataforma ENGER adota o padrão arquitetural **Clean Architecture** em conjunto com **Domain-Driven Design (DDD)** no backend. Essa estrutura visa separar as responsabilidades do negócio das camadas de infraestrutura e entrega, garantindo a manutenibilidade e escalabilidade do software. O frontend utiliza **React** e **Tailwind CSS** para construir as interfaces dinâmicas, incluindo o construtor interativo de orçamentos. A persistência de dados é gerenciada por bancos de dados relacionais **PostgreSQL** e **SQL Server**, enquanto tarefas assíncronas, como geração de PDFs e envio de e-mails, são executadas por workers de background.
 
-A figura abaixo ilustra uma visão geral de arquitetura (camadas do sistema):
-
-![Visão Geral da Arquitetura do Sistema ENGER](https://github.com/user-attachments/assets/9a0fc9b4-0aeb-4246-a863-06eefcf19758)
-
-*Visão Geral da Infraestrutura e Camadas da Plataforma ENGER.*
-
 Ao longo do desenvolvimento do projeto ENGER, foram gerados artefatos técnicos e de planejamento para suportar a solução. Atuando como um guia para a equipe de desenvolvimento e stakeholders, os artefatos específicos criados para este projeto incluem:
 
 1.  **Benchmarking (Tabela Comparativa):** Análise competitiva entre o ENGER e soluções de mercado para identificar diferenciais.
@@ -85,7 +67,6 @@ Ao longo do desenvolvimento do projeto ENGER, foram gerados artefatos técnicos 
 **Exemplos de repositórios:**
 
 * [https://github.com/luciano-zanuz/enger-projeto](https://github.com/luciano-zanuz/enger-projeto)
-* [https://github.com/exemplo/tcc-enger](https://github.com/exemplo/tcc-enger)
 
 ### Estratégia
 A validação das regras de negócio estruturais tem sido realizada através de homologação contínua, baseando-se em dumps de banco de dados e especificações providenciadas pela supervisão técnica do projeto. Além disso, os fluxos de CI/CD garantem que as lógicas core do sistema sejam validadas por meio de testes unitários a cada nova integração. O construtor interativo de orçamentos e as diretrizes de design visual (paleta de cores e formatação de dados) foram iterados e validados através de feedbacks diretos sobre a interface.
