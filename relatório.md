@@ -62,23 +62,12 @@ Ao longo do desenvolvimento do projeto ENGER, foram gerados artefatos técnicos 
 4.  **Diagrama Entidade-Relacionamento (ER):** Modelagem do banco de dados relacional (PostgreSQL e SQL Server) para o controle de orçamentos, obras e funcionários.
 5.  **Protótipos de Interface:** High-fidelity wireframes e mockups do frontend em React, destacando a paleta de cores laranja, preto e branco e o construtor interativo.
 
-*(Adicione aqui o link para o repositório que contém a listagem e os arquivos dos artefatos listados acima).*
-
-**Exemplos de repositórios:**
-
 * (https://github.com/gleissonbraga/projeto_ENGER_backend)
 
-### Estratégia
-A validação das regras de negócio estruturais tem sido realizada através de homologação contínua, baseando-se em dumps de banco de dados e especificações providenciadas pela supervisão técnica do projeto. Além disso, os fluxos de CI/CD garantem que as lógicas core do sistema sejam validadas por meio de testes unitários a cada nova integração. O construtor interativo de orçamentos e as diretrizes de design visual (paleta de cores e formatação de dados) foram iterados e validados através de feedbacks diretos sobre a interface.
+## Validação
 
-### Consolidação dos Dados Coletados
-*(Nesta seção, futuramente, inclua gráficos de desempenho da API, relatórios do GitHub Actions sobre o sucesso dos testes, ou tabelas com feedbacks e métricas de usabilidade colhidas com usuários de teste).*
+Ao finalizar o processo de desenvolvimento busco apresentar a micro empreendedores para recolher feedbacks e informações que ajudaram para aprimorar o MVP no final. O objetivo é apresentar a pessoas conhecidas para usarem e viabilizarem o projeto.
 
 ## Conclusões
+
 O desenvolvimento do ENGER demonstra a viabilidade de simplificar processos complexos da construção civil — como a alocação de mão de obra e a elaboração técnica de orçamentos — através de uma plataforma SaaS unificada. A escolha por DDD e Clean Architecture permitiu a construção de um back-end escalável, preparado para integrações financeiras, enquanto a adoção de um construtor de orçamentos dinâmico resultou em uma ferramenta de alto valor prático para o gerenciamento de obras.
-
-**Limitações do Projeto e Perspectivas Futuras:**
-*(Discuta aqui potenciais expansões, como a criação de aplicativos móveis para apontamento de presença diretamente no canteiro de obras, novas integrações de pagamento ou módulos adicionais).*
-
-## Referências Bibliográficas
-*(Adicione aqui as referências técnicas de documentações usadas, como a documentação oficial do C# .NET Core, React, Tailwind CSS, API do Mercado Pago, Docker, etc).*
